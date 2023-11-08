@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Control de Caja Menor</title>
+</head>
+
+<body>
+    <h1>Control de Caja Menor</h1>
+
+    <div id="loginForm">
+        <h2>Iniciar sesión</h2>
+        <input type="text" id="username" placeholder="Nombre de usuario">
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="login()">Iniciar sesión</button>
+        <p>No tienes una cuenta? <a href="javascript:void(0)" onclick="showRegistrationForm()">Registrarse</a></p>
+    </div>
+
+    <div id="registrationForm" style="display: none;">
+        <h2>Registrarse</h2>
+        <input type="text" id="newUsername" placeholder="Nuevo nombre de usuario">
+        <input type="password" id="newPassword" placeholder="Nueva contraseña">
+        <button onclick="register()">Registrarse</button>
+        <p>Ya tienes una cuenta? <a href="javascript:void(0)" onclick="showLoginForm()">Iniciar sesión</a></p>
+    </div>
+
+    <div id="expenses" style="display: none;">
+        <h2>Registrar un gasto</h2>
+        <input type="number" id="expenseValue" placeholder="Valor">
+        <input type="text" id="expenseCategory" placeholder="Categoría">
+        <input type="text" id="expenseDescription" placeholder="Descripción">
+        <button onclick="addExpense()">Agregar gasto</button>
+        <h2>Listado de gastos</h2>
+        <label for="filterCategory">Filtrar por categoría:</label>
+        <select id="filterCategory" onchange="filterExpensesByCategory()">
+            <option value="">Todos</option>
+            <option value="negocios">Negocios</option>
+            <option value="diversion">Diversión</option>
+            <option value="transporte">Transporte</option>
+            <option value="comida">Comida</option>
+        </select>
+        <ul id="expenseList"></ul>
+
+        <h2>Listado de gastos por usuario:</h2>
+        <input type="text" id="userFilter" placeholder="Nombre de usuario">
+        <button onclick="filterExpensesByUser()">Filtrar</button>
+        <ul id="userExpenseList"></ul>
+
+        <h2>Tope máximo de dinero</h2>
+        <input type="number" id="expenseLimit" placeholder="Tope máximo">
+        <button onclick="setExpenseLimit()">Establecer tope</button>
+        <div id="expenseAlert" style="display: none;"></div>
+        <ul id="expenseList"></ul>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
+</div>
+</body>
+
+</html>
